@@ -21,7 +21,7 @@ let quiz = document.querySelector("#quiz");
 for (let i = 0; i < questions.length; i++) {
     let questionDiv = document.createElement("div");
     let question = document.createElement("p");
-    question.innerText = Number(questions.indexOf(questions[i]) + 1) + "." + questions[i].text;
+    question.innerText = Number(questions.indexOf(questions[i]) + 1) + ". " + questions[i].text;
     questionDiv.appendChild(question);
 
     for (let y = 0; y < questions[i].answers.length; y++) {
@@ -54,13 +54,7 @@ function getData () {
                 if (valFromQuestion == radVal) {
                     correctAnswers++;
                 } else {
-                    wrongAnswers += Number(questions.indexOf(questions[p]) + 1);
-
-                    if (questions.indexOf(questions[p]) == questions.length - 1) {
-                        wrongAnswers += ".";
-                    } else {
-                        wrongAnswers += ", ";
-                    }
+                    wrongAnswers += Number(questions.indexOf(questions[p]) + 1) + " ";
                 }
                 break;
             }
