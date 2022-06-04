@@ -9,6 +9,11 @@ let questions = [
         answers: ["Bill Gates", "Mark Zukerberg", "Jeff Bezos", "Elon Musk"],
         correctAnswer: 3
     },
+    {
+        text: "Who is the President of Romania?",
+        answers: ["Bill Gates", "Donald Trump", "6ix9ine", "Klaus Iohannis", "Mihai Bendeac"],
+        correctAnswer: 3
+    },
 ];
 
 let quiz = document.querySelector("#quiz");
@@ -16,7 +21,7 @@ let quiz = document.querySelector("#quiz");
 for (let i = 0; i < questions.length; i++) {
     let questionDiv = document.createElement("div");
     let question = document.createElement("p");
-    question.innerText = questions[i].text;
+    question.innerText = Number(questions.indexOf(questions[i]) + 1) + "." + questions[i].text;
     questionDiv.appendChild(question);
 
     for (let y = 0; y < questions[i].answers.length; y++) {
@@ -38,7 +43,8 @@ submitForm.addEventListener("click", getData);
 quiz.appendChild(submitForm);
 
 function getData () {
-    let correctAnswer = 0;
+    let correctAnswers = 0;
+    let wrongAnswers = "";
     for (let p = 0; p < questions.length; p++) {
         let radios = document.getElementsByName('question' + p);
         for (let i = 0; i < radios.length; i++) {
@@ -46,13 +52,24 @@ function getData () {
                 let radVal = radios[i].value;
                 let valFromQuestion = questions[p].correctAnswer;
                 if (valFromQuestion == radVal) {
-                    correctAnswer++;
+                    correctAnswers++;
+                } else {
+                    wrongAnswers += Number(questions.indexOf(questions[p]) + 1);
+
+                    if (questions.indexOf(questions[p]) == questions.length - 1) {
+                        wrongAnswers += ".";
+                    } else {
+                        wrongAnswers += ", ";
+                    }
                 }
                 break;
             }
         }
     }
-    if (correctAnswer == questions.length) {
-        console.log("correct");
+    
+    if (correctAnswers == questions.length) {
+        alert("Correct answers!");
+    } else {
+        alert("Wrong questions: " + wrongAnswers);
     }
 }
