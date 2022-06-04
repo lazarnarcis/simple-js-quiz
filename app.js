@@ -12,7 +12,7 @@ let questions = [
     {
         text: "Who is the President of Romania?",
         answers: ["Bill Gates", "Klaus Iohannis", "Donald Trump", "6ix9ine", "Mihai Bendeac"],
-        correctAnswer: 2
+        correctAnswer: 1
     },
 ];
 
