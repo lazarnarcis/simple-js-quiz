@@ -14,8 +14,22 @@ let questions = [
 let quiz = document.querySelector("#quiz");
 
 for (let i = 0; i < questions.length; i++) {
+    let questionDiv = document.createElement("div");
     let question = document.createElement("p");
     question.innerText = questions[i].text;
-    quiz.appendChild(question);
-    
+    questionDiv.appendChild(question);
+
+    for (let y = 0; y < questions[i].answers.length; y++) {
+        let answer = document.createElement("input");
+        answer.type = "radio";
+        let answerText = document.createElement("label");
+        answerText.innerText = questions[i].answers[y];
+        questionDiv.appendChild(answer);
+        questionDiv.appendChild(answerText);
+    }
+    quiz.appendChild(questionDiv);
 }
+
+let submitForm = document.createElement("button");
+submitForm.innerText = "Submit Quiz";
+quiz.appendChild(submitForm);
