@@ -1,21 +1,13 @@
 let questions = [
     {
         text: "Who created Facebook?",
-        answers: {
-            "Bill Gates": false,
-            "Mark Zukerberg": true,
-            "Jeff Bezos": false,
-            "Daniel Sam": false
-        }
+        answers: ["Bill Gates", "Mark Zukerberg", "Jeff Bezos", "Daniel Sam"],
+        correctAnswer: 1
     }, 
     {
         text: "Who is the richest man in the world?",
-        answers: {
-            "Bill Gates": false,
-            "Mark Zukerberg": false,
-            "Jeff Bezos": false,
-            "Elon Musk": true
-        }
+        answers: ["Bill Gates", "Mark Zukerberg", "Jeff Bezos", "Elon Musk"],
+        correctAnswer: 3
     },
 ];
 
