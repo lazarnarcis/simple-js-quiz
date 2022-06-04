@@ -11,8 +11,8 @@ let questions = [
     },
     {
         text: "Who is the President of Romania?",
-        answers: ["Bill Gates", "Donald Trump", "6ix9ine", "Klaus Iohannis", "Mihai Bendeac"],
-        correctAnswer: 3
+        answers: ["Bill Gates", "Klaus Iohannis", "Donald Trump", "6ix9ine", "Mihai Bendeac"],
+        correctAnswer: 2
     },
 ];
 
