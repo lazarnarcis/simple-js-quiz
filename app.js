@@ -23,6 +23,7 @@ for (let i = 0; i < questions.length; i++) {
         let answer = document.createElement("input");
         answer.type = "radio";
         answer.name = "question" + i; // ex: question4
+        answer.value = y;
         let answerText = document.createElement("label");
         answerText.innerText = questions[i].answers[y];
         questionDiv.appendChild(answer);
@@ -33,4 +34,25 @@ for (let i = 0; i < questions.length; i++) {
 
 let submitForm = document.createElement("button");
 submitForm.innerText = "Submit Quiz";
+submitForm.addEventListener("click", getData);
 quiz.appendChild(submitForm);
+
+function getData () {
+    let correctAnswer = 0;
+    for (let p = 0; p < questions.length; p++) {
+        let radios = document.getElementsByName('question' + p);
+        for (let i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                let radVal = radios[i].value;
+                let valFromQuestion = questions[p].correctAnswer;
+                if (valFromQuestion == radVal) {
+                    correctAnswer++;
+                }
+                break;
+            }
+        }
+    }
+    if (correctAnswer == questions.length) {
+        console.log("correct");
+    }
+}
