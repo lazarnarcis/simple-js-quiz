@@ -22,6 +22,7 @@ for (let i = 0; i < questions.length; i++) {
     for (let y = 0; y < questions[i].answers.length; y++) {
         let answer = document.createElement("input");
         answer.type = "radio";
+        answer.name = "question" + i; // ex: question4
         let answerText = document.createElement("label");
         answerText.innerText = questions[i].answers[y];
         questionDiv.appendChild(answer);
