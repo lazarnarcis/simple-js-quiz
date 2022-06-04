@@ -13,3 +13,11 @@ let responsesQ2 = {
     "Jeff Bezos": false,
     "Elon Musk": true
 };
+
+let quiz = document.querySelector("#quiz");
+
+for (let i = 0; i < questions.length; i++) {
+    let question = document.createElement("p");
+    question.innerText = questions[i];
+    quiz.appendChild(question);
+}
