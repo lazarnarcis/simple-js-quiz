@@ -45,6 +45,8 @@ quiz.appendChild(submitForm);
 function getData () {
     let correctAnswers = 0;
     let wrongAnswers = "";
+    let wrongans = 0;
+
     for (let p = 0; p < questions.length; p++) {
         let radios = document.getElementsByName('question' + p);
         for (let i = 0; i < radios.length; i++) {
@@ -55,6 +57,7 @@ function getData () {
                     correctAnswers++;
                 } else {
                     wrongAnswers += Number(questions.indexOf(questions[p]) + 1) + " ";
+                    wrongans++;
                 }
                 break;
             }
@@ -63,6 +66,8 @@ function getData () {
     
     if (correctAnswers == questions.length) {
         alert("Correct answers!");
+    } else if (wrongans == questions.length) {
+        alert("All the answers are wrong!");
     } else {
         alert("Wrong questions: " + wrongAnswers);
     }
