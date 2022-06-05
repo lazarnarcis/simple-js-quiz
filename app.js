@@ -69,6 +69,6 @@ function getData () {
     } else if (wrongans == questions.length) {
         alert("All the answers are wrong!");
     } else {
-        alert("Wrong questions: " + wrongAnswers);
+        alert("You have " + wrongans + ` wrong ${ wrongans == 1 ? "answer" : "answers" }: ` + wrongAnswers);
     }
 }
